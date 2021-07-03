@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Livewire\ShowUsers;
 use App\Models\User;
 use App\services\GithubServices;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
 
-    $github = new GithubServices();
 
-    dd($github->getUsers());
-
+    return view('welcome');
 });
 
 
@@ -28,6 +27,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('dashboard/users', ShowUsers::class)->middleware(['auth'])->name('show.users');
+
+
 
 require __DIR__.'/auth.php';
 

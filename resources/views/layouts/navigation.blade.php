@@ -7,9 +7,19 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        Devs
                     </x-nav-link>
+
+
+                    <x-nav-link :href="route('show.users')" :active="request()->routeIs('show.users')">
+                        Usuários
+                    </x-nav-link>
+
+
+
+
                 </div>
             </div>
 
@@ -36,7 +46,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Sair') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
