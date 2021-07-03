@@ -11,4 +11,7 @@ class Dev extends Model
 
     protected $fillable = ['name', 'prs', 'repositories', 'profile', 'starts'];
 
+
+
+
 }
