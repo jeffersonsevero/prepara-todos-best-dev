@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\ShowUsers;
 use App\Http\Livewire\UserCreate;
+use App\Http\Livewire\UserEdit;
 use App\Http\Livewire\UserProfile;
 use App\Models\User;
 use App\services\GithubServices;
@@ -39,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users', ShowUsers::class)->name('show.users');
         Route::get('/perfil', UserProfile::class )->name('user.profile');
         Route::get('/criar-usuario', UserCreate::class)->name('user.create');
-
+        Route::get('/editar-usuario', UserEdit::class)->name('user.edit');
 
     });
 
