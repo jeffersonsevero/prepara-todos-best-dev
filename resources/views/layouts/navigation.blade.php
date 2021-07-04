@@ -18,6 +18,11 @@
                     </x-nav-link>
 
 
+                    <x-nav-link :href="route('user.create')" :active="request()->routeIs('user.create')">
+                        Criar novo usuário
+                    </x-nav-link>
+
+
 
 
                 </div>
@@ -40,6 +45,12 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
+
+
+                        <x-dropdown-link :href="route('user.create')">
+                            {{ __('Criar usuário') }}
+                        </x-dropdown-link>
+
 
                         <x-dropdown-link :href="route('user.profile')">
                             {{ __('Meu perfil') }}
@@ -91,6 +102,12 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
+
+
+
+                <x-responsive-nav-link :href="route('user.create')">
+                    {{ __('Criar usuário') }}
+                </x-responsive-nav-link>
 
 
 
