@@ -8,19 +8,28 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
+
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Devs
                     </x-nav-link>
 
 
-                    <x-nav-link :href="route('show.users')" :active="request()->routeIs('show.users')">
-                        Usuários
-                    </x-nav-link>
+
+                    @if (Auth::user()->role == 'Admin')
+
+                        <x-nav-link :href="route('show.users')" :active="request()->routeIs('show.users')">
+                            Usuários
+                        </x-nav-link>
 
 
-                    <x-nav-link :href="route('user.create')" :active="request()->routeIs('user.create')">
-                        Criar novo usuário
-                    </x-nav-link>
+                        <x-nav-link :href="route('user.create')" :active="request()->routeIs('user.create')">
+                            Criar novo usuário
+                        </x-nav-link>
+
+
+                    @endif
+
+
 
 
 
@@ -47,9 +56,13 @@
                         <!-- Authentication -->
 
 
-                        <x-dropdown-link :href="route('user.create')">
-                            {{ __('Criar usuário') }}
-                        </x-dropdown-link>
+                        @if (Auth::user()->role == 'Admin')
+                            <x-dropdown-link :href="route('user.create')">
+                                {{ __('Criar usuário') }}
+                            </x-dropdown-link>
+
+                        @endif
+
 
 
                         <x-dropdown-link :href="route('user.profile')">

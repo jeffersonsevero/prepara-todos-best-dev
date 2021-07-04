@@ -176,9 +176,6 @@
                 </x-modal>
 
 
-
-
-
                 <!-- More people... -->
               </tbody>
             </table>
