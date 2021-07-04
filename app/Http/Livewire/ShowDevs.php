@@ -9,10 +9,19 @@ use Livewire\Component;
 class ShowDevs extends Component
 {
 
+    /**@var GithubServices */
     private $github;
 
     /**@var Collection */
     public $users;
+
+    public $showDevModal = false;
+    public $devName;
+    public $qtdRepo;
+    public $followers;
+
+
+
 
     public function mount()
     {
@@ -25,4 +34,24 @@ class ShowDevs extends Component
     {
         return view('livewire.show-devs');
     }
+
+
+
+    public function setDev(string $dev)
+    {
+
+        $github = new GithubServices();
+
+        $dev = $github->getUser($dev);
+
+
+        $this->devName = $dev['login'];
+        $this->qtdRepo = $dev['public_repos'];
+        $this->followers = $dev['followers'];
+
+        $this->showDevModal = true;
+    }
+
+
+
 }

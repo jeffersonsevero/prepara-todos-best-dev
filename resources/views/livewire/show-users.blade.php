@@ -219,12 +219,18 @@
 
                             </x-modal>
 
-                            {{ $users->links() }}
 
 
                             <!-- More people... -->
                           </tbody>
                         </table>
+
+                        <div class="p-3">
+                            {{ $users->links() }}
+                        </div>
+
+
+
                       </div>
                     </div>
                   </div>

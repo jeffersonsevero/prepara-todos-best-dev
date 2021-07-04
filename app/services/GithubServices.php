@@ -40,14 +40,14 @@ class GithubServices {
 
     }
 
-    public function getUser(string $user): object
+    public function getUser($user)
     {
         $this->endpoint = "/users/{$user}";
 
         try
         {
             $response = Http::withToken($this->apiToken)->get($this->apiUrl . $this->endpoint);
-            return $response->object();
+            return $response->json();
         }
         catch(HttpException $e)
         {
@@ -55,8 +55,6 @@ class GithubServices {
         }
 
     }
-
-
 
     public function getStars(string $user): int
     {
