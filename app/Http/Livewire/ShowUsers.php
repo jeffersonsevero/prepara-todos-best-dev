@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ShowUsers extends Component
@@ -26,7 +27,7 @@ class ShowUsers extends Component
     public function render()
     {
 
-        $users = User::orderBy('created_at', 'desc')->paginate(8);
+        $users = User::orderBy('created_at', 'desc')->where('id', '<>', Auth::user()->id)->paginate(8);
 
 
         return view('livewire.show-users', [
@@ -48,7 +49,6 @@ class ShowUsers extends Component
 
     public function update()
     {
-
         $this->validate();
 
         $this->user->name = $this->name;
@@ -66,6 +66,25 @@ class ShowUsers extends Component
         $this->clearFields();
 
     }
+
+
+
+    public function delete(User $user)
+    {
+
+        $this->user = $user;
+
+        $this->user->delete();
+
+
+    }
+
+
+
+
+
+
+
 
 
 
