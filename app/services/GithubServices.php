@@ -15,21 +15,24 @@ class GithubServices {
 
     public function __construct()
     {
-        $this->apiUrl = 'https://api.github.com';
-        $this->apiToken = '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';
+        $this->apiUrl =  config('services.github.url');
+        $this->apiToken = config('services.github.token');
         $this->githubUser = 'jeffersonsevero';
     }
 
 
-    public function getUsers( int $page = 2)
+    public function getUsers( int $page = 0)
     {
         $this->endpoint = '/users';
-
         try
         {
             $response = Http::withToken($this->apiToken)->get($this->apiUrl . $this->endpoint, [
 
+                "since" => $page,
+                "per_page" => 100
+
             ]);
+
             return $response->json();
 
         }

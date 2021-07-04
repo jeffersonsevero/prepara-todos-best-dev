@@ -52,4 +52,11 @@ class User extends Authenticatable
     }
 
 
+    public function devProfiles()
+    {
+        return $this->hasMany(DevProfile::class);
+    }
+
+
+
 }

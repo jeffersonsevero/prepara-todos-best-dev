@@ -21,19 +21,25 @@ class ShowDevs extends Component
     public $followers;
     public $avatar;
     public $githubLink;
+    public $page = 0;
+
 
 
 
 
     public function mount()
     {
-        $this->github = new GithubServices();
-        $this->users = collect($this->github->getUsers());
     }
 
 
     public function render()
     {
+        $this->github = new GithubServices();
+
+        $this->users = collect($this->github->getUsers($this->page));
+
+
+
         return view('livewire.show-devs');
     }
 
@@ -44,17 +50,38 @@ class ShowDevs extends Component
 
         $github = new GithubServices();
 
-        $dev = $github->getUser($dev);
+        $dev = (object) $github->getUser($dev);
 
 
-        $this->devName = $dev['login'];
-        $this->qtdRepo = $dev['public_repos'];
-        $this->followers = $dev['followers'];
-        $this->avatar = $dev['avatar_url'];
-        $this->githubLink = $dev['html_url'];
+        $this->devName = $dev->login;
+        $this->qtdRepo = $dev->public_repos;
+        $this->followers = $dev->followers;
+        $this->avatar = $dev->avatar_url;
+        $this->githubLink = $dev->html_url;
 
         $this->showDevModal = true;
     }
+
+
+
+    public function increment()
+    {
+        if($this->page < 5)
+        {
+            $this->page++;
+        }
+    }
+
+    public function decrement()
+    {
+
+        if($this->page >= 0){
+
+            $this->page--;
+        }
+
+    }
+
 
 
 
