@@ -19,6 +19,8 @@ class ShowDevs extends Component
     public $devName;
     public $qtdRepo;
     public $followers;
+    public $avatar;
+    public $githubLink;
 
 
 
@@ -48,6 +50,8 @@ class ShowDevs extends Component
         $this->devName = $dev['login'];
         $this->qtdRepo = $dev['public_repos'];
         $this->followers = $dev['followers'];
+        $this->avatar = $dev['avatar_url'];
+        $this->githubLink = $dev['html_url'];
 
         $this->showDevModal = true;
     }

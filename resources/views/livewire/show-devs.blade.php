@@ -97,18 +97,14 @@
                                     </div>
 
                                     <form method="POST" wire:submit.prevent="update" class="w-full max-w-lg">
+
+
                                         <div class="flex flex-wrap -mx-3 mb-6">
                                           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                               Nome
                                             </label>
-                                            <input wire:model="name"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" id="email" type="email" placeholder="E-mail">
-
-
-                                            {{ $devName }}
-                                            @error('name')
-                                                <x-validade-message>  {{ $message }}  </x-validade-message>
-                                            @enderror
+                                            <input readonly value="{{ $devName }}" wire:model="devName"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" id="email" type="email" placeholder="E-mail">
 
 
 
@@ -116,9 +112,9 @@
                                           </div>
                                           <div class="w-full md:w-1/2 px-3">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                                              E-mail
+                                              Quantidade de repositórios
                                             </label>
-                                            <input wire:model="email"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" id="email" type="email" placeholder="E-mail">
+                                            <input readonly  value="{{ $qtdRepo }}"  wire:model="qtdRepo"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" id="email" type="email" placeholder="E-mail">
                                             @error('email')
                                                 <x-validade-message>  {{ $message }}  </x-validade-message>
                                             @enderror
@@ -126,20 +122,24 @@
 
                                           </div>
                                         </div>
+
+
                                         <div class="flex flex-wrap -mx-3 mb-6">
-                                          <div class="w-full px-3">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                              Nova senha
-                                            </label>
-                                            <input wire:model="password"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" name="password" type="password" placeholder="******">
-                                            @error('password')
-                                                <x-validade-message>  {{ $message }}  </x-validade-message>
-                                            @enderror
+
+                                            <div class="w-full md:w-1/2 px-3 mt-2">
+                                              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                                <a target="_blank" href="{{ $githubLink }}">  <img class="w-10 h-10" src="{{ url('img/github.png') }}" alt="">  </a>
+                                              </label>
 
 
 
+                                            </div>
                                           </div>
-                                        </div>
+
+
+
+
+
                                         <div class="flex flex-wrap -mx-3 mb-2">
 
                                             <select class="block w-52 text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="animals">
