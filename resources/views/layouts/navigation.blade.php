@@ -10,7 +10,11 @@
 
 
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        Devs
+                        Devs Github
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('devs.with.vote')" :active="request()->routeIs('devs.with.vote')">
+                        Devs avaliados
                     </x-nav-link>
 
 

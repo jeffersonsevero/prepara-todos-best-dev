@@ -29,9 +29,11 @@ class GithubServices {
             $response = Http::withToken($this->apiToken)->get($this->apiUrl . $this->endpoint, [
 
                 "since" => $page,
-                "per_page" => 100
+                "per_page" => 100,
+
 
             ]);
+
 
             return $response->json();
 
@@ -59,16 +61,6 @@ class GithubServices {
 
     }
 
-    public function getStars(string $user): int
-    {
-
-    }
-
-
-    public function getPullRequests(string $user): int
-    {
-
-    }
 
 
 

@@ -98,7 +98,7 @@
 
                                     </div>
 
-                                    <form method="POST" wire:submit.prevent="update" class="w-full max-w-lg">
+                                <form method="POST" wire:submit.prevent="vote('{{ $devName }}')" class="w-full max-w-lg">
 
 
                                         <div class="flex flex-wrap -mx-3 mb-6">
