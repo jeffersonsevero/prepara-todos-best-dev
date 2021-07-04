@@ -40,14 +40,23 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
+
+                        <x-dropdown-link :href="route('user.profile')">
+                            {{ __('Meu perfil') }}
+                        </x-dropdown-link>
+
+
+
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
                                 {{ __('Sair') }}
                             </x-dropdown-link>
+
+
+
                         </form>
                     </x-slot>
                 </x-dropdown>
@@ -82,13 +91,20 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
+
+
+
+                <x-responsive-nav-link :href="route('user.profile')">
+                    {{ __('Meu perfil') }}
+                </x-responsive-nav-link>
+
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                        {{ __('Sair') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

@@ -5,11 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 
-
-
-
 class ShowUsers extends Component
 {
+
 
     public $name;
     public $email;
@@ -25,7 +23,7 @@ class ShowUsers extends Component
     public function render()
     {
 
-        $users = User::orderBy('created_at', 'desc')->paginate(10);
+        $users = User::orderBy('created_at', 'desc')->paginate(5);
 
 
         return view('livewire.show-users', [
@@ -42,7 +40,6 @@ class ShowUsers extends Component
             session()->flash('message-error', 'Ooops, esse email já está em uso! :/');
             return;
         }
-
 
         $user = new User();
         $user->name = $this->name;
