@@ -40,6 +40,12 @@ class DevProfile extends Model
     }
 
 
+    public function getProfileAttribute($value)
+    {
+
+        return ucfirst( str_replace("-", " ", $value) );
+
+    }
 
 
 
