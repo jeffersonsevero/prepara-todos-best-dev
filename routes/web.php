@@ -13,14 +13,7 @@ use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 Route::get('/', function () {
 
-    $user = new User();
 
-    $user->name = 'Jeff';
-    $user->email = 'jefferson@gmail.com';
-    $user->role = 1;
-    $user->password = bcrypt('123456');
-
-    $user->save();
 
     return view('welcome');
 });
