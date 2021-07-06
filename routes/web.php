@@ -10,19 +10,17 @@ use App\services\GithubServices;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
 
+    $user = new User();
+
+    $user->name = 'Jeff';
+    $user->email = 'jefferson@gmail.com';
+    $user->role = 1;
+    $user->password = bcrypt('123456');
+
+    $user->save();
 
     return view('welcome');
 });
@@ -51,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-// Route::get('dashboard/users', ShowUsers::class)->middleware(['auth'])->name('show.users');
+Route::get('dashboard/users', ShowUsers::class)->middleware(['auth'])->name('show.users');
 
 
 
