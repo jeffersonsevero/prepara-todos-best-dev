@@ -22,19 +22,21 @@ class DevProfile extends Model
     }
 
 
-    public function scopeDoomDev($query)
+
+
+    public function scopeBadDevProfile($query)
     {
         return $query->where('profile', 'ruim');
     }
 
 
-    public function scopeGoodDev($query)
+    public function scopeGoodDevProfile($query)
     {
         return $query->where('profile', 'bom');
     }
 
 
-    public function scopeVeryGoodDev($query)
+    public function scopeVeryGoodDevProfile($query)
     {
         return $query->where('profile', 'muito-bom');
     }

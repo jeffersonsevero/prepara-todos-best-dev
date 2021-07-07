@@ -27,13 +27,7 @@ class ShowDevs extends Component
     public $profile;
 
 
-
-
-
-    public function mount()
-    {
-    }
-
+    
 
     public function render()
     {
