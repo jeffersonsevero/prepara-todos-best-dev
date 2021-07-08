@@ -36,10 +36,10 @@ A empresa prepara todos está em busca de novos desenvolvedores para o seu proce
 
 - [Laravel](https://laravel.com/) -  Versão 8.0
 - MySQL
-- [Laravel Livewire](https://laravel.com/) -  Versão 8.0
-- PHP - Versão 7.2
-- HTML
-- CSS
+- [Laravel Livewire](https://laravel-livewire.com/docs/2.x/quickstart)
+- PHP - Versão 7.3
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Laravel Breeze](https://github.com/laravel/breeze)
 
 
 ## Pré requisitos
@@ -64,21 +64,30 @@ sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd 
 ```
 
 
+**Lembrando que a versão do PHP e de seus pacotes deve ser PHP 7.3+**
+
 ## Configuração de banco de dados
 
-- Crie uma base de dados chamada "telzir" sendo com colação de utf_8_general_ci. (Caso esteja em algum interpretador de SQL pode usar o seguinte comando)
+- Crie uma base de dados chamada "prepara" sendo com colação de utf_8_general_ci. (Caso esteja em algum interpretador de SQL pode usar o seguinte comando)
 
 ```sql
-CREATE DATABASE telzir;
+CREATE DATABASE prepara;
 ```
 
 - Configure o seu arquivo .env localizado na raiz do projeto com as suas credenciais de banco de dados
 
-<img src="https://ik.imagekit.io/lrrw3mrhils/screenshot_feZkTuSJhm.png">
+<img src="public/img/env.png">
 
 
 
-- Pegue o arquivo chamado telzir.sql na raiz do projeto e rode em um terminal sql para persirtir alguns dados.
+- Depois disso você pode rodar as migrações com o comando 
+
+```bash
+php artisan migrate
+```
+
+
+
 
 
 

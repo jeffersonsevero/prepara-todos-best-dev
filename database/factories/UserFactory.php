@@ -28,10 +28,30 @@ class UserFactory extends Factory
             'role' => 2,
             'avatar' => 'avatars/avatar.png',
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt(123456), // password
             'remember_token' => Str::random(10),
         ];
     }
+
+
+
+    public function admin()
+    {
+        return $this->state([
+            'role' => 1,
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'avatar' => 'avatars/avatar.png',
+            'email_verified_at' => now(),
+            'password' => bcrypt(123456), // password
+            'remember_token' => Str::random(10),
+
+        ]);
+    }
+
+
+
+
 
     /**
      * Indicate that the model's email address should be unverified.

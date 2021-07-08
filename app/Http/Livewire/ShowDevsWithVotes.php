@@ -11,12 +11,6 @@ class ShowDevsWithVotes extends Component
     public $profile;
 
 
-    public function __construct()
-    {
-
-    }
-
-
 
 
     public function render()
