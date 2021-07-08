@@ -19,7 +19,7 @@
 A empresa prepara todos está em busca de novos desenvolvedores para o seu processo seletivo, e por conta da demanda de filtrar perfis de devs, foi desenvolvido esse sistema para ajudar nesse fluxo. A aplicação basicamente faz o uso do github para pegar esses perfils de desenvolvedores e apartir disso guardar em sua base os perfils.  Além disso, a aplicação conta com todo um sistema de gerenciamento de usuário, onde o usuário com permissão de administrador, pode criar outros usuários e os gerenciar para ter mais agilidade no processo.
 
 - O usuário admin pode Ver/Cadastrar/Atualizar e apagar outros usuários
-- O usuário atendente pede atualizar suas informações
+- O usuário atendente pode atualizar suas informações
 - O usuário admin pode atualizar suas informações
 - O usuário atendente pode ver a listagem de devs
 - O usuário atendente pode fazer votação no perfil do dev
@@ -89,7 +89,7 @@ php artisan migrate
 
 
 - Para autenticar a aplicação no github você deve fornecer seu usuário e token no arquivo .env
-- Coloque as duas seguintes variáveis no seu .env e coloque o os dados
+- Coloque as duas seguintes variáveis no seu .env e coloque os dados
 ```env
 
 GITHUB_API_TOKEN=token
@@ -120,7 +120,7 @@ $ composer install
 - Ainda dentro da raiz do projeto, execute o seguinte comando para iniciar o servidor da aplicação:
 
 
-- Agora você pode rodar um seed que vai criar um usuário admin e 10 usuários atendentes: <br>
+- Agora você pode rodar um seed que vai criar 1 usuário admin e 10 usuários atendentes: <br>
 login admin: admin@gmail.com <br>
 senha: 123456
 
