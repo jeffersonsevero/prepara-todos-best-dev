@@ -16,7 +16,7 @@
 
 ## Sobre
 
-A empresa prepara todos está em busca de novos desenvolvedores para o seu processo seletivo, e por conta da demanda de filtrar perfis de devs, foi desenvolvido esse sistema para ajudar nesse fluxo. A aplicação basicamente o uso do github para pegar esses perfils de desenvolvedores e apartir disso guardar em sua base os perfils.  Além disso, a aplicação conta com todo um sistema de gerenciamento de usuário, onde o usuário com permissão de administrador, pode criar outros usuários e os gerenciar para ter mais agilidade no processo.
+A empresa prepara todos está em busca de novos desenvolvedores para o seu processo seletivo, e por conta da demanda de filtrar perfis de devs, foi desenvolvido esse sistema para ajudar nesse fluxo. A aplicação basicamente faz o uso do github para pegar esses perfils de desenvolvedores e apartir disso guardar em sua base os perfils.  Além disso, a aplicação conta com todo um sistema de gerenciamento de usuário, onde o usuário com permissão de administrador, pode criar outros usuários e os gerenciar para ter mais agilidade no processo.
 
 - O usuário admin pode Ver/Cadastrar/Atualizar e apagar outros usuários
 - O usuário atendente pede atualizar suas informações
