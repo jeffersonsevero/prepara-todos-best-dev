@@ -18,7 +18,6 @@ class ShowDevsWithVotes extends Component
 
         $devs = $this->getDevsByProfile();
 
-
         return view('livewire.show-devs-with-votes', ['devs' => $devs  ] );
     }
 

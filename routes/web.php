@@ -13,9 +13,8 @@ use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 Route::get('/', function () {
 
-    
 
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 

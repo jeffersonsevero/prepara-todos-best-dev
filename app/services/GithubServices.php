@@ -17,7 +17,7 @@ class GithubServices {
     {
         $this->apiUrl =  config('services.github.url');
         $this->apiToken = config('services.github.token');
-        $this->githubUser = 'jeffersonsevero';
+        $this->githubUser = config('services.github.user');
     }
 
 

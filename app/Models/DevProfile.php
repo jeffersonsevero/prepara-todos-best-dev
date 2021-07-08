@@ -22,11 +22,6 @@ class DevProfile extends Model
     }
 
 
-
-
-    
-
-
     public function scopeBadDevProfile($query)
     {
         return $query->where('profile', 'ruim');

@@ -73,11 +73,10 @@ sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd 
 ```sql
 CREATE DATABASE prepara;
 ```
-
+- Copie o seu arquivo .env.example com o nome de .env
 - Configure o seu arquivo .env localizado na raiz do projeto com as suas credenciais de banco de dados
 
 <img src="public/img/env.png">
-
 
 
 - Depois disso você pode rodar as migrações com o comando 
@@ -86,6 +85,25 @@ CREATE DATABASE prepara;
 php artisan migrate
 ```
 
+## Configuração do github
+
+
+- Para autenticar a aplicação no github você deve fornecer seu usuário e token no arquivo .env
+- Coloque as duas seguintes variáveis no seu .env e coloque o os dados
+```env
+
+GITHUB_API_TOKEN=token
+GITHUB_USER=usergithub
+
+
+```
+
+- O seu user do github é o que tem após github.com
+
+<img src="public/img/user.png">
+
+
+- Para pegar o seu token do github basta seguir esse [link](https://docs.github.com/pt/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 
 
@@ -101,6 +119,17 @@ $ composer install
 
 - Ainda dentro da raiz do projeto, execute o seguinte comando para iniciar o servidor da aplicação:
 
+
+- Agora você pode rodar um seed que vai criar um usuário admin e 10 usuários atendentes: <br>
+login admin: admin@gmail.com <br>
+senha: 123456
+
+```bash
+php artisan db:seed
+```
+
+Agora você pode rodar o projeto
+
 ```bash
 $ php artisan serve
 ```
@@ -110,29 +139,16 @@ $ php artisan serve
 $ php artisan serve --host localhost:porta
 ```
 
-
-## Partes importantes
-
-- O arquivo de controlador dessa aplicação está em app/Http/Controllers/WebController.php
-
-- Já a view principal está em resources/views/web/index
-
-
-
-
-
 ## Testes
 - O Laravel já vem por padrão equipado com o PHPUnit que é o componente para testes mais conhecido do PHP.
-- Para esta aplicação foram feitos alguns testes unitários.
-- Estes ficam localizados na pasta tests que fica na raiz do projeto, dentro de outra pasta chama Unit.
-
-- No arquivo chamado CalcTest.php ficam alguns testes validando as funções que retornam os valores de COM PLANO ou SEM PLANO.
+- Para esta aplicação foram feitos alguns testes de integração.
+- Estes ficam localizados na pasta tests que fica na raiz do projeto.
 
 
 
 - Para rodar os testes execute o seguinte comando na raiz do projeto:
 ```bash
- $ ./vendor/bin/phpunit  
+ $ php artisan test
 ```
 
 
@@ -151,6 +167,3 @@ Feito com ❤️ por Jefferson Severo 👋🏽 Entre em contato!
 [![Gmail Badge](https://img.shields.io/badge/-jeffersonsevero08@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:jeffersonsevero08@gmail.com)
 
 
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
