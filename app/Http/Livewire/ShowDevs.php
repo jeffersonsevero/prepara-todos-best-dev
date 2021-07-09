@@ -27,15 +27,13 @@ class ShowDevs extends Component
     public $profile;
 
 
-    
+
 
     public function render()
     {
         $this->github = new GithubServices();
 
         $this->users = collect($this->github->getUsers($this->page));
-
-
 
         return view('livewire.show-devs');
     }
