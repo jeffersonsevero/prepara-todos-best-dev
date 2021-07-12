@@ -17,7 +17,6 @@ class ShowDevsWithVotes extends Component
     public function render()
     {
 
-
         $devs = ProfileFactory::create($this->profile)->getDevs();
 
 
