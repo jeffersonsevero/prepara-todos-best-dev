@@ -15,7 +15,7 @@
 
 ## Link da aplicação em produção (Funcionando apenas no firefox)
 
-[Teste prepara](teste-prepara.herokuapp.com)
+[Teste prepara](https://teste-prepara.herokuapp.com)
 
 ### Credenciais
 
