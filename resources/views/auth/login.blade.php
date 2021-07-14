@@ -12,6 +12,9 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+
+        {{ env('APP_URL') . '/js/app.js' }}
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
