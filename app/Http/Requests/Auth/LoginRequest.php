@@ -45,10 +45,7 @@ class LoginRequest extends FormRequest
     public function authenticate()
     {
 
-        $user = User::where('email', 'admin@gmail.com')->first();
-        $user->avatar = 'avatars/avatar.png';
-        $user->save();
-
+        //
 
         $this->ensureIsNotRateLimited();
 
