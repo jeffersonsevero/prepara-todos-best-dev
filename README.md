@@ -13,6 +13,16 @@
 <img src="public/img/previa.png">
 
 
+## Link da aplicação em produção (Funcionando apenas no firefox)
+
+<a href="teste-prepara.herokuapp.com/">  Teste prepara todos  </a>
+
+### Credenciais
+
+Login: admin@gmail.com <br>
+Senha: 123456
+
+
 
 ## Sobre
 
